@@ -2,8 +2,8 @@ struct Person<'a> {
     name : &'a String,
 }
 
-fn get_name<'a>(person: &Person) -> &'a str {
-    "Alice"
+fn get_name<'a>(person: &'a Person) -> &'a str {
+    person.name
 }
 
 #[cfg(test)]
